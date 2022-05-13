@@ -4,7 +4,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let dotsArray = [];
-const numberOfDots = 300;
+const numberOfDots = 100;
 // const color = {
 //     r: Math.random() * 255,
 //     g: Math.random() * 255,
@@ -34,8 +34,8 @@ class Dot {
 
         ctx.fillStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.o})`;
         // creates a circular clipping
-        ctx.arc(300, 300, 250, 0, Math.PI * 2)
-        ctx.clip();
+        // ctx.arc(400, 400, 300, 0, Math.PI * 2)
+        // ctx.clip();
 
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -43,9 +43,10 @@ class Dot {
         ctx.fill();
 
         ctx.beginPath();
-        ctx.arc(this.x, this.y, 10, 70, Math.PI * 2)
+        ctx.arc(this.x, this.y, Math.random() * 30, 0, Math.PI * 2)
+        ctx.strokeStyle = `rgba(${color.r}, ${color.g}, ${color.b}, ${color.o})`;
+        ctx.stroke();
         ctx.closePath();
-        ctx.fill();
     }
 }
 
