@@ -9,21 +9,45 @@ class Star {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.length = 30;
-        this.width = 2;
     }
 
-    // take values of position x and y in size and draw a cirlce there to represent the particle
     draw() {
+
+        const width = 5;
+
         ctx.beginPath();
+        ctx.strokeStyle = 'black';
         ctx.moveTo(0, 0);
         ctx.lineTo(300, 150);
+        ctx.lineWidth = Math.random() * width ;
         ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.moveTo(0, 150);
+        ctx.lineTo(300, 0);
+        ctx.lineWidth = Math.random() * width;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.moveTo(150, 0);
+        ctx.lineTo(150, 150);
+        ctx.lineWidth = Math.random() * width;
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.moveTo(0, 75);
+        ctx.lineTo(300, 75);
+        ctx.lineWidth = Math.random() * width;
+        ctx.stroke();
+
     }
 
 }
 
-const star1 = new Star(100, 10);
+const star1 = new Star();
 
 function animate() {
 
@@ -32,3 +56,5 @@ function animate() {
     requestAnimationFrame(animate);
 
 }
+
+animate();
