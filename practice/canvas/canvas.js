@@ -97,11 +97,11 @@ class FlowFieldEffect {
         this.#ctx.lineTo(x + Math.cos(angle) * length, y + Math.sin(angle) * length);
         this.#ctx.stroke();
         // we can call however many begin paths as we want
-        this.#ctx.beginPath();
-        this.#ctx.moveTo(x + 5, y + 5);
-        // x and y line movement / size on grid - direction of lines
-        this.#ctx.lineTo(x + Math.cos(angle) * length, y + Math.sin(angle) * length);
-        this.#ctx.stroke();
+        // this.#ctx.beginPath();
+        // this.#ctx.moveTo(x + 5, y + 5);
+        // // x and y line movement / size on grid - direction of lines
+        // this.#ctx.lineTo(x + Math.cos(angle) * length, y + Math.sin(angle) * length);
+        // this.#ctx.stroke();
     }
 
     animate(timeStamp) {
