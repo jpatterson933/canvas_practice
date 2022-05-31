@@ -1,0 +1,11 @@
+{
+  "name": "botrecipescraper",
+  "version": "1.0.0",
+  "description": "Bot made to scrape the internet for cocktail recipes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
