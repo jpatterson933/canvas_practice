@@ -24,30 +24,30 @@ let time = 0;
 
 const color = function (x, y, r, g, b) {
     ctx.fillStyle = `rgb(${r}, ${g}, ${b})`
-    ctx.fillRect(x, y, 250, 250);
+    ctx.fillRect(x, y, 200, 200);
 };
 // the 100 at the end affects how quickly everything is changeing
 const Red = function (x, y, time) {
-    return (Math.floor(180 + 64 * Math.cos((x * x - y * y) / 100 + time)));
+    return (Math.floor(100 + 64 * Math.cos((x * x - y * y) / 100 + time)));
 };
 // the 100 at the end affects the gradient turn in the corner as well as how quickly it changes
 const Green = function (x, y, time) {
-    return (Math.floor(180 + 64 * Math.sin((x * x * Math.cos(time / 4) + y * y * Math.sin(time / 3)) / 100)));
+    return (Math.floor(200 + 64 * Math.sin((x * x * Math.cos(time / 4) + y * y * Math.sin(time / 3)) / 100)));
 };
 // the 1100 is what is affecting how smooth the gradient looks
 // the number in return right aftr Math.floor will affect how much of that color will be in the gradient
 const Blue = function (x, y, time) {
-    return (Math.floor(180 + 64 * Math.sin(5 * Math.sin(time / 9) + ((x - 100) * (x - 100) + (y - 100) * (y - 100)) / 100)));
+    return (Math.floor(200 + 64 * Math.sin(5 * Math.sin(time / 9) + ((x - 100) * (x - 100) + (y - 100) * (y - 100)) / 1100)));
 };
 
 // the number of the x or y control the size of the outer layers // can you add even more layers
 const startAnimation = function () {
-    for (x = 0; x <= 50; x++) {
-        for (y = 0; y <= 50; y++) {
+    for (x = 0; x <= 10; x++) {
+        for (y = 0; y <= 60; y++) {
             color(x, y, Red(x, y, time), Green(x, y, time), Blue(x, y, time));
         }
     }
-    time = time + 0.03;
+    time = time + 0.01;
     window.requestAnimationFrame(startAnimation);
 };
 

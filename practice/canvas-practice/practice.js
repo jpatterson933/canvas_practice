@@ -67,7 +67,7 @@ class FlowFieldEffect {
         this.#ctx.strokeStyle = this.gradient;
         this.radius = 0;
         // velocity of radius
-        this.vr = 0.1;
+        this.vr = 0.05;
 
     }
 
@@ -76,11 +76,13 @@ class FlowFieldEffect {
         // there are four parameters defining the start and end points of the gradient line - first: the x-axis coodrinate of the start point - second: the y-axis coodrinate of the start point - third: the x-axis coordinate of the end point - fourth: the y-axis coordinate of the end point
         // to summarize the four points are: x, y starting point and x, y ending points
         // here are are saying upper left is where we will start and our ending will be defined the the width and height - the two parameters in the contructor that are connected to the inner width and inner height of the window when the document loads
-        this.gradient = this.#ctx.createLinearGradient(0, 0, this.#width, this.#height);
+        this.gradient = this.#ctx.createLinearGradient(1, 1, this.#width, this.#height); // if you subtract from the width and height it alters where the gradient ends up, starts, ect.
         // color stop is used to define the stopping point of the color
         // the two parameters are when the color should start 1 being the most and what the color should be
         this.gradient.addColorStop("0.0", "#7FFF00");
+        this.gradient.addColorStop("0.25", "#000000");
         this.gradient.addColorStop("0.5", "#00FFFF");
+        this.gradient.addColorStop("0.9", "#000000");
         this.gradient.addColorStop("1", "#7FFF00");
 
     }
@@ -114,7 +116,7 @@ class FlowFieldEffect {
             this.#ctx.clearRect(0, 0, this.#width, this.#height);
             this.radius += this.vr;
             // this if statement creates a bouncing effects with our animation on the canvas
-            if (this.radius > 50 || this.radius < -50) this.vr *= -1;
+            if (this.radius > 500 || this.radius < -50) this.vr *= -1;
             // this is how you map a grid on canvas using nested for loops
             for (let y = 0; y < this.#height; y += this.cellSize) {
                 for (let x = 0; x < this.#width; x += this.cellSize){
