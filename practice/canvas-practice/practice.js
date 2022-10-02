@@ -48,17 +48,18 @@ class FlowFieldEffect {
         // -- we take the private class field #ctx and assign it to the ctx passed in as an argument -----------
         this.#ctx = ctx;
         // this.#ctx.strokeStyle = 'white';
-        this.#ctx.lineWidth = 0.5;
+        this.#ctx.lineWidth = 2;
         // - what we are doing is using the constructor to take global variables and assign them to private class fields - this is encapsulation ctx, width, height - this is how animation libraries are made - private class fields first have to be declared above before they are called inside of the constructor
         this.#width = width;
         this.#height = height;
         // --------------------------encapsulation is one of the main principles of object oriented programming - encapsulation is the bundling of data and methods that act on that data in a way that access to the data is restricted from outside of the bundle
         // this.angle = 0;
         this.lastTime = 0;
+        // I belive this alters the spin 
         this.interval = 1000/60;
         this.timer = 0;
         // grid cell size
-        this.cellSize = 15;
+        this.cellSize = 30;
         // variable for setting and creating gradient
         this.gradient;
         // calling our creategradient
@@ -90,7 +91,7 @@ class FlowFieldEffect {
     // this job is to draw lines - we can call begin path and draw however many lines we would like
     #drawLine(angle, x, y) {
         // the length of our line
-        const length = 30;
+        const length = 40;
         // where the path line will begin
         // the beginPath is called before beginning each line - can be called multople times and looks like it is always connected to the context (ctx)
         this.#ctx.beginPath();
@@ -116,7 +117,7 @@ class FlowFieldEffect {
             this.#ctx.clearRect(0, 0, this.#width, this.#height);
             this.radius += this.vr;
             // this if statement creates a bouncing effects with our animation on the canvas
-            if (this.radius > 500 || this.radius < -50) this.vr *= -1;
+            if (this.radius > 50 || this.radius < -50) this.vr *= -1;
             // this is how you map a grid on canvas using nested for loops
             for (let y = 0; y < this.#height; y += this.cellSize) {
                 for (let x = 0; x < this.#width; x += this.cellSize){
