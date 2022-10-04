@@ -48,7 +48,7 @@ class FlowFieldEffect {
         // -- we take the private class field #ctx and assign it to the ctx passed in as an argument -----------
         this.#ctx = ctx;
         // this.#ctx.strokeStyle = 'white';
-        this.#ctx.lineWidth = 2;
+        this.#ctx.lineWidth = 4;
         // - what we are doing is using the constructor to take global variables and assign them to private class fields - this is encapsulation ctx, width, height - this is how animation libraries are made - private class fields first have to be declared above before they are called inside of the constructor
         this.#width = width;
         this.#height = height;
@@ -80,11 +80,10 @@ class FlowFieldEffect {
         this.gradient = this.#ctx.createLinearGradient(1, 1, this.#width, this.#height); // if you subtract from the width and height it alters where the gradient ends up, starts, ect.
         // color stop is used to define the stopping point of the color
         // the two parameters are when the color should start 1 being the most and what the color should be
-        this.gradient.addColorStop("0.0", "#7FFF00");
-        this.gradient.addColorStop("0.25", "#000000");
-        this.gradient.addColorStop("0.5", "#00FFFF");
-        this.gradient.addColorStop("0.9", "#000000");
-        this.gradient.addColorStop("1", "#7FFF00");
+        this.gradient.addColorStop("0.0", "#7AEC76");
+        this.gradient.addColorStop("0.25", "#0fFF00");
+        this.gradient.addColorStop("0.5", "#0fFF00");
+        this.gradient.addColorStop("1", "#7AEC76");
 
     }
 
@@ -117,12 +116,12 @@ class FlowFieldEffect {
             this.#ctx.clearRect(0, 0, this.#width, this.#height);
             this.radius += this.vr;
             // this if statement creates a bouncing effects with our animation on the canvas
-            if (this.radius > 50 || this.radius < -50) this.vr *= -1;
+            if (this.radius > 10 || this.radius < -10) this.vr *= -1;
             // this is how you map a grid on canvas using nested for loops
             for (let y = 0; y < this.#height; y += this.cellSize) {
                 for (let x = 0; x < this.#width; x += this.cellSize){
                     // changing the 0.01 changes the zoomed in with the lower number zooming us in further
-                    const angle = (Math.cos(x * 0.005) + Math.sin(y * 0.005)) * this.radius;
+                    const angle = (Math.cos(x * 0.005/* This number changes the shape*/) + Math.sin(y * 0.008)) * this.radius;
                     this.#drawLine(angle, x, y);
                 }
             }
