@@ -1,10 +1,9 @@
-# canvas_practice
-A repository where my various canvas projects will live.
+# Canvas API
+> The Canvas API provides a means for drawing graphics via JavaScript and HTML canvas element. To learn more check out the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) at mdn web docs.
 #
-#
-# Canvas Element Title
-## Quick Description of element
-Further description to be added later.
+# Name of Canvas Element
+## Quick Description of canvas element
+Further description and deeper explanation of canvas element here.
 #
 #
 # animateToMouse
@@ -14,7 +13,7 @@ Further description to be added later.
 3. Using an event listener to track the mouse movements on the screen. The canvas element will then render lines that appear to follow the mouse around dependent upon where the user moves it.
 4. A class has been set up to encapsulate the data and uses private classes #ctx, #width, and #height that can then be accessed by the class constructor.
 5. The class has two methods, #drawLine which is responsible for drawing the lines at the respective x and y coordinates which are defined by the position of the mouse.
-6. The second method animate() is responsible for animating the canvas element and implementing the drawLine method and updating the x and y coordinates.
+6. The second method animate() is responsible for animating the canvas element and implementing the drawLine method and updating the x and y coordinates using two for loops to update the y and x position as the mouse moves.
 #
 #
 # circleGenerator
