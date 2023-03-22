@@ -7,9 +7,9 @@ A repository where my various canvas projects will live.
 Further description to be added later.
 #
 #
-# aimSight
-## Wherever you move the mouse, it will look like you are aiming through a scope.
-Further description to be added later.
+# animateToMouse
+## Wherever you move the mouse, lines will follow
+Using an event listener to track the mouse movements on the screen. The canvas element will then render lines that appear to follow the mouse around dependent upon where the user moves it. 
 #
 #
 # circleGenerator
