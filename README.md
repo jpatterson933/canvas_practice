@@ -9,7 +9,12 @@ Further description to be added later.
 #
 # animateToMouse
 ## Wherever you move the mouse, lines will follow
-Using an event listener to track the mouse movements on the screen. The canvas element will then render lines that appear to follow the mouse around dependent upon where the user moves it. 
+1. Once the window loads, the canvas element will be loaded and set using the getContext('2d') method.
+2. An event listener is added to control the size of the animation and update it if the window is resized. The specific event listener added is 'resize'
+3. Using an event listener to track the mouse movements on the screen. The canvas element will then render lines that appear to follow the mouse around dependent upon where the user moves it.
+4. A class has been set up to encapsulate the data and uses private classes #ctx, #width, and #height that can then be accessed by the class constructor.
+5. The class has two methods, #drawLine which is responsible for drawing the lines at the respective x and y coordinates which are defined by the position of the mouse.
+6. The second method animate() is responsible for animating the canvas element and implementing the drawLine method and updating the x and y coordinates.
 #
 #
 # circleGenerator

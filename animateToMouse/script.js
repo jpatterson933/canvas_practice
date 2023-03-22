@@ -42,7 +42,7 @@ class FlowFieldEffect {
     #ctx;
     #width;
     #height;
-    // if height and width are set to the constructor, then the canvas will fill the 
+    // if height and width are set to the constructor, then the canvas will fill
     constructor(ctx, width, height) {
         this.#ctx = ctx;
         this.#ctx.strokeStyle = 'blue';
@@ -79,7 +79,6 @@ class FlowFieldEffect {
         } else {
             this.timer += deltaTime; // same here, this may be to control the animation time and reset it to a point to prevent weird deviations but again I am not entirely sure as changing the values did nothing, but that might because I would have to wait a while for a deviation to actually be noticable and cause problems
         }
-        // cllas our class 
         flowFieldAnimation = requestAnimationFrame(this.animate.bind(this));
     }
 }
