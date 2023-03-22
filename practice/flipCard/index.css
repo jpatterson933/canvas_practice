@@ -42,8 +42,9 @@ body {
 }
 /* this is the back of the card */
 #stats {
-    background-color: dodgerblue;
+    /* background-color: dodgerblue; */
     color: white;
+    /* using transform rotate which will turn the card 180degress on the y axis*/
     transform: rotateY(180deg);
 
 }

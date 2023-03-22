@@ -12,13 +12,13 @@ const numberOfParticles = 300;
 let titleElement = document.getElementById('title1');
 // getBoundingClientRect() - returns an object that contains the size of an element and its position relative to the browser window
 titleMeasurements = titleElement.getBoundingClientRect();
-// console log to get details of title element
-// console.log(titleMeasurements)
 // below we are going to convert the titleMeasurements html bounding box into a javascripot object
+// this is what we are using OUTSIDE of the Particle class instance that we then use to detect collisions
 let title = {
     x: titleMeasurements.left,
     y: titleMeasurements.top,
     width: titleMeasurements.width,
+    // this would be the height of the canvas
     height: 10
 }
 
@@ -97,21 +97,12 @@ function init() {
 }
 init();
 
-// our first particle
-// const particle1 = new Particle(100, 10);
-// second particle
-// const particle2 = new Particle(400, 900);
 // for loop that will draw the canvas over and over again
 function animate() {
     // create a fading trail
     ctx.fillStyle = 'rgba(255, 255, 255, 0.01)';
     // fill rectangle - covers the canvas with semi transparent rectangle over and over again
     ctx.fillRect(0, 0, canvas.width, canvas.height)
-    // since this was created using are particle class it has access to all associated class methods -- update and draw
-    // particle1.update();
-    // particle1.draw();
-    // particle2.update();
-    // particle2.draw();
 
     // for loop to update draw and animate particles
     for (let i = 0; i < particlesArray.length; i++) {
@@ -129,7 +120,7 @@ function animate() {
 
 animate();
 
-// this will fix any issues we get from resizing window
+// this will fix any issues we get from resizing window 
 window.addEventListener('resize', function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
